@@ -1,5 +1,6 @@
 import './Navbar.css';
 import { AiOutlineHome } from "react-icons/ai";
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
    return (
@@ -17,34 +18,21 @@ export default function Navbar() {
         setTheme("dark");
       }} 
       className="text-black-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75">
-        <AiOutlineHome/>
+        <NavLink to="/" className="hover:text-gray-500 dark:hover:text-white">
+              <AiOutlineHome/>
+              </NavLink>
         </button>
         <nav aria-label="Global" className="hidden md:block">
           <ul className="flex items-center gap-6 text-2xl">
             <li>
-              <a
-                className="text-black-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#"
-              >
-                About Me
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="text-black-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#"
-              >
+              <NavLink to="/projects" className="hover:text-gray-500 dark:hover:text-white">
                 Projects
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                className="text-black-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#"
-              >
+              <NavLink to="/contact" className="hover:text-gray-500 dark:hover:text-white">
                 Contact
-              </a>
+              </NavLink>
             </li>
 
           </ul>
