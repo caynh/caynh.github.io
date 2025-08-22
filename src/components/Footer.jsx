@@ -10,7 +10,9 @@ export default function Footer() {
             setTheme("dark");
             }} 
             className="text-black-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75">
+                <a href="https://www.linkedin.com/in/cayn-hallow-2b54a0200/" target="_blank" rel="noopener noreferrer">
                     <AiOutlineLinkedin />
+                </a>
                     </button>
                 </div>
                 <div className="pb-8 ml-19 fixed left-0 bottom-0 text-3xl">
@@ -18,7 +20,9 @@ export default function Footer() {
             setTheme("dark");
             }} 
             className="text-black-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75">
-                <ImGithub />
+                <a href="https://github.com/caynh" target="_blank" rel="noopener noreferrer">
+                    <ImGithub />
+                </a>
                     </button>
                 </div>
             </div>
