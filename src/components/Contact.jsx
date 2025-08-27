@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
+import { motion as m } from 'motion/react';
+
 
 export default function Contact() {
   const form = useRef();
@@ -33,7 +35,10 @@ export default function Contact() {
   };
 
   return (
-    <div>
+    <m.div 
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{duration: 0.75, ease: "easeOut"}}>
       <Toaster position="bottom-center" reverseOrder={false} />
         <form className = "fixed flex flex-col h-screen text-left justify-center py-55 px-15 mt-20 ml-50 leading-[1.8]'ref={form} onSubmit={sendEmail}">
           <label className="text-3xl">Name</label>
@@ -46,7 +51,9 @@ export default function Contact() {
             {isSending ? 'Send' : 'Send'}
           </button>
         </form>
-        <p className="fixed text-center justify-center left-10 px-12 mt-25 text-9xl">Let's Connect!</p>
-    </div>
+        <header className="fixed text-center justify-center left-10 px-12 mt-25 text-3xl">
+        <h1>Let's Connect!</h1>
+        </header>
+    </m.div>
   );
 };

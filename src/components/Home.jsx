@@ -1,13 +1,17 @@
 import './Home.css';
 import BlurText from "./BlurText";
-
+import { motion as m } from 'motion/react';
 
 export default function Header() {
     const handleAnimationComplete = () => {
         console.log("Animation finished!");
     };
     return (
-        <div className="flex text-left">
+        <m.div 
+        className="flex text-left"
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
+        transition={{duration: 0.75, ease: "easeOut"}}>
             <header className="pt-20 fixed left-25 mt-6 w-screen text-3xl">
                 <h1>Cayn Hallow</h1>
             </header>
@@ -20,8 +24,8 @@ export default function Header() {
                     onAnimationComplete={handleAnimationComplete}
                     className="my-5 pt-20 text-3xl"
                     />
-            <p className="pt-5 text-3xl">Pursuing Software Engineer with a focus in React.js and Tailwind. Making code seamless and clean one line at a time!</p>
+            <p className="pt-5 text-3xl">Pursuing Software Engineer with a focus in React.js and Tailwind. Making code seamless and clean, one line at a time!</p>
             </div>
-        </div>
+        </m.div>
     )
 }
