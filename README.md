@@ -1,6 +1,6 @@
 # Cayn's Portfolio
 
-This application is using React, Vite, & Tailwind to incorporate a fun, clean experience! 
+This application is using React, Vite & Tailwind to incorporate a fun, clean experience! 
 
 # Dependencies
 
