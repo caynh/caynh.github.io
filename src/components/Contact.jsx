@@ -8,6 +8,11 @@ import { motion as m } from 'motion/react';
 export default function Contact() {
   const form = useRef();
   const [isSending, setIsSending] = useState(false); //Tracks sending state
+  const [formData, setFormData] = useState({user_name:'', user_email: '', message: ''});
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,7 +28,7 @@ export default function Contact() {
       .then(
         () => {
           toast.success('Email sent successfully!');
-          form.current.reset();
+          setFormData({user_name:'', user_email: '', message: ''});
           setIsSending(false);
 
         },
@@ -40,14 +45,35 @@ export default function Contact() {
     initial={{ opacity: 0}}
     animate={{ opacity: 1}}
     transition={{duration: 0.75, ease: "easeOut"}}>
-      <Toaster position="bottom-center" reverseOrder={false} />
+      <Toaster position="bottom-center" reverseOrder={false} 
+      />
         <form className = "fixed flex flex-col h-screen text-left justify-center py-55 px-15 mt-20 ml-50 leading-[1.8]" ref={form} onSubmit={sendEmail}>
           <label className="text-3xl">Name</label>
-          <input type="text" name="user_name" className="p-5 mt-2 mb-2 w-150 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" required />
+          <input 
+          type="text" 
+          name="user_name" 
+          value={formData.user_name} 
+          onChange={handleChange} 
+          className="p-5 mt-2 mb-2 w-150 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" 
+          required />
           <label className='text-3xl'>Email</label>
-          <input type="email" name="user_email" className="p-5 mt-2 mb-2 w-150 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" required />
+          <input 
+          type="email" 
+          name="user_email" 
+          value={formData.user_email} 
+          onChange={handleChange} 
+          className="p-5 mt-2 mb-2 w-150 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" 
+          required />
           <label className='text-3xl'>Message</label>
-          <textarea name="message" minLength="5" placeholder="Minimum of at least 5 characters" maxLength="500" className="resize-none pt-2 py-25 px-5 mt-2 mb-2 w-200 h-250 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" required />
+          <textarea 
+          name="message" 
+          minLength="5" 
+          placeholder="Minimum of at least 5 characters" 
+          maxLength="500" 
+          value={formData.message} 
+          onChange={handleChange} 
+          className="resize-none pt-2 py-25 px-5 mt-2 mb-2 w-200 h-250 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" 
+          required />
           <button className={`p-2 rounded-lg m-4 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 dark:text-white`}>
             {isSending ? 'Send' : 'Send'}
           </button>
