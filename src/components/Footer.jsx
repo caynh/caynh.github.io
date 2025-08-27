@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div>
             <div className="flex items-center gap-6">
-                <div className="p-8 ml-1 fixed left-0 bottom-0 text-3xl">
+                <div className="p-8 ml-1 fixed left-0 bottom-0 text-4xl">
                     <button onClick={() => {
             setTheme("dark");
             }} 
@@ -15,7 +15,7 @@ export default function Footer() {
                 </a>
                     </button>
                 </div>
-                <div className="pb-8 ml-19 fixed left-0 bottom-0 text-3xl">
+                <div className="pb-8 ml-20 fixed left-0 bottom-0 text-4xl">
                     <button onClick={() => {
             setTheme("dark");
             }} 

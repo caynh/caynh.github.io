@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
    return (
-    <header className="dark:bg-gray-700 fixed top-5 left-10">
+    <header className="fixed top-5 left-10">
     <div className="flex h-16 items-center">
       <div className="flex-1 md:flex md:items-center md:gap-12">            
         <path
