@@ -24,7 +24,7 @@ export default function Header() {
                     onAnimationComplete={handleAnimationComplete}
                     className="my-5 pt-20 text-3xl"
                     />
-            <p className="pt-5 text-3xl">Pursuing Software Engineer with a focus in React.js and Tailwind. Making code seamless and clean, one line at a time!</p>
+            <p className="pt-5 text-3xl">Pursuing Software Engineer with a focus in React.js and Tailwind.<br></br>Making code seamless and clean, one line at a time!</p>
             </div>
         </m.div>
     )
