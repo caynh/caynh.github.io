@@ -46,7 +46,7 @@ export default function Contact() {
           <label className='text-3xl'>Email</label>
           <input type="email" name="user_email" className="p-5 mt-2 mb-2 w-150 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" required />
           <label className='text-3xl'>Message</label>
-          <textarea name="message" minlength="5" placeholder="Minimum of at least 5 characters" maxlength="500" className="resize-none pt-2 py-25 px-5 mt-2 mb-2 w-200 h-250 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" required />
+          <textarea name="message" minLength="5" placeholder="Minimum of at least 5 characters" maxLength="500" className="resize-none pt-2 py-25 px-5 mt-2 mb-2 w-200 h-250 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" required />
           <button className={`p-2 rounded-lg m-4 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 dark:text-white`}>
             {isSending ? 'Send' : 'Send'}
           </button>

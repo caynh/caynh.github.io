@@ -14,9 +14,7 @@ export default function Navbar() {
       </div>
 
       <div className="md:flex md:items-center md:gap-12 text-2xl">
-        <button onClick={() => {
-        setTheme("dark");
-      }} 
+        <button
       className="text-black-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75">
         <NavLink to="/" className="hover:text-gray-500 dark:hover:text-white">
               <AiOutlineHome/>
