@@ -25,6 +25,7 @@ export default function Contact() {
           toast.success('Email sent successfully!');
           form.current.reset();
           setIsSending(false);
+
         },
         (error) => {
           toast.error('Failed to send email. Please try again.')
@@ -40,7 +41,7 @@ export default function Contact() {
     animate={{ opacity: 1}}
     transition={{duration: 0.75, ease: "easeOut"}}>
       <Toaster position="bottom-center" reverseOrder={false} />
-        <form className = "fixed flex flex-col h-screen text-left justify-center py-55 px-15 mt-20 ml-50 leading-[1.8]'ref={form} onSubmit={sendEmail}">
+        <form className = "fixed flex flex-col h-screen text-left justify-center py-55 px-15 mt-20 ml-50 leading-[1.8]" ref={form} onSubmit={sendEmail}>
           <label className="text-3xl">Name</label>
           <input type="text" name="user_name" className="p-5 mt-2 mb-2 w-150 bg-zinc-300 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-600 text-2xl" required />
           <label className='text-3xl'>Email</label>
