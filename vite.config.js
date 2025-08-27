@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-   base: '/caynh.github.io/',
+   base: '/',
    server: {
     watch: {
       usePolling: true,
